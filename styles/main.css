@@ -12,8 +12,26 @@ header {
 
 header h1 {
   position: absolute;
+  font-size: 40px;
 }
 
 header img {
   width: 150px;
 }
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-self: center;
+}
+
+.nav li {
+  border-radius: 90px/30px;
+  list-style-type: none;
+  margin: 0 20px;
+  border: solid 5px #fff;
+  padding: 10px;
+  font-size: 20px;
+}
+
