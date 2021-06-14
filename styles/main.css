@@ -5,6 +5,8 @@ a {
   color: white;
 }
 
+
+/******* Header *******/
 header {
   padding: 10px;
   display: flex;
@@ -19,7 +21,9 @@ header h1 {
 header img {
   width: 150px;
 }
+/*********************/
 
+/******* Nav *******/
 nav ul {
   display: flex;
   flex-direction: row;
@@ -34,7 +38,9 @@ nav ul {
   padding: 10px;
   font-size: 20px;
 }
+/*********************/
 
+/******* Main *******/
 main {
   display: flex;
   flex-direction: column;
@@ -51,7 +57,10 @@ article {
   height: 400px;
   align-self: center;
 }
+/*********************/
 
+/******* Footer *******/
 footer {
   text-align: center;
 }
+/*********************/
