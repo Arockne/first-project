@@ -38,6 +38,12 @@ nav ul {
   padding: 10px;
   font-size: 20px;
 }
+
+.nav li:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #ffbf00e5;
+}
 /*********************/
 
 /******* Main home *******/
