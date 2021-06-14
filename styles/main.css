@@ -40,17 +40,17 @@ nav ul {
 }
 /*********************/
 
-/******* Main *******/
-main {
+/******* Main home *******/
+.home {
   display: flex;
   flex-direction: column;
 }
 
-main div {
+.home div {
   align-self: center;
 }
 
-article {
+.home article {
   border: 10px solid #fff;
   border-radius: 90px/30px;
   width: 600px;
