@@ -9,3 +9,11 @@ header {
   display: flex;
   justify-content: center;
 }
+
+header h1 {
+  position: absolute;
+}
+
+header img {
+  width: 150px;
+}
