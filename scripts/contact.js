@@ -75,7 +75,7 @@ const createFormWithAttributes = (action, method="GET") => {
   return form;
 }
 
-const addChildrenToForm = () => {
+const completedFormToFill = () => {
   const form = createFormWithAttributes('./submission.php', 'GET');
 
   const fieldset = createFieldsetWithInput(['Email', 'Subject', 'Message']);
@@ -94,7 +94,7 @@ const contactDescription = 'Email us through our satelite based communications a
 const description = createElementWithText('p', contactDescription);
 
 //create form element
-const contactForm = addChildrenToForm();
+const contactForm = completedFormToFill();
 
 const formContainer = createFormContainerWithChildren(heading, description, contactForm);
 formContainer.setAttribute('class', 'contact');
