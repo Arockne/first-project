@@ -37,7 +37,13 @@ for (let i = 0; i < inputElements.length; i++) {
   const textNode = document.createTextNode(element);
   const label = document.createElement('label');
   label.appendChild(textNode);
-  
+
+  const input = document.createElement('input');
+  if (i === 0) {
+    input.setAttribute('type', element.toLowerCase());
+  } else {
+    input.setAttribute('type', 'text');
+  }
 }
 //create input element for email
 //create input element for subject
