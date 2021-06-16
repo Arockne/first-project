@@ -62,9 +62,9 @@ for (let i = 0; i < inputElements.length; i++) {
   
   input.setAttribute('name', value);
   input.setAttribute('required', 'required')
-  fieldset.appendChild(lineBreak);
   label.appendChild(input);
   fieldset.appendChild(label);
+  fieldset.appendChild(lineBreak);
 }
 contactForm.appendChild(fieldset);
 
