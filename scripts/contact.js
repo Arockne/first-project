@@ -1,11 +1,14 @@
 
-//contact button
-  //replace main content with a form
-  //create multiple form elements
-  //append the form into the main element
-//in addition
-  //insert linkedin link
-  //insert personal github link
+
+const createElementWithText = function(element, text) {
+  if (!element && !text) {
+    return null;
+  }
+  const htmlElement = document.createElement(element);
+  const textNode = document.createTextNode(text);
+  htmlElement.appendChild(textNode);
+  return htmlElement;
+}
 
 //somehow store main content from home
 const home = document.body.querySelector('div.home');
