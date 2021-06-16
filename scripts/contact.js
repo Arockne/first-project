@@ -68,6 +68,24 @@ const createFieldsetWithInput = (inputElements) => {
   return fieldset;
 }
 
+const createFormWithAttributes = (action, method="GET") => {
+  const form = document.createElement('form');
+  form.setAttribute('action', action);
+  form.setAttribute('method', method);
+  return form;
+}
+
+const addChildrenToForm = () => {
+  const form = createFormWithAttributes('./submission.php', 'GET');
+
+  const fieldset = createFieldsetWithInput(['Email', 'Subject', 'Message']);
+  const legend = createElementWithText('legend', 'Contact');
+  fieldset.appendChild(legend);
+  form.appendChild(fieldset);
+  
+  return form;
+}
+
 //Creation of heading element
 const heading = createElementWithText('h2', 'Contact Lunar Base');
 
@@ -76,16 +94,7 @@ const contactDescription = 'Email us through our satelite based communications a
 const description = createElementWithText('p', contactDescription);
 
 //create form element
-const contactForm = document.createElement('form');
-contactForm.setAttribute('action', './submission.php');
-contactForm.setAttribute('method', 'GET');
-
-const fieldset = createFieldsetWithInput(['Email', 'Subject', 'Message']);
-const legend = createElementWithText('legend', 'Contact');
-fieldset.appendChild(legend);
-
-
-contactForm.appendChild(fieldset);
+const contactForm = addChildrenToForm();
 
 const formContainer = createFormContainerWithChildren(heading, description, contactForm);
 formContainer.setAttribute('class', 'contact');
@@ -93,10 +102,10 @@ formContainer.setAttribute('class', 'contact');
 
 //probably could put nested div in main into a single variable so when we click home it removes and places it back in for better functionality
 const main = document.querySelector('main');
-const home = document.body.querySelector('div.home');
+const home = document.body.querySelector('.home');
 const contactButton = document.querySelector('.contactButton');
 contactButton.addEventListener('click', function() {
-  home.remove();
+  console.log(home.remove());
   main.appendChild(formContainer);
 })
 
