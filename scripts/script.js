@@ -30,20 +30,26 @@ const contactForm = document.createElement('form');
 //create input element for name
 const textArea = document.createElement('textarea');
 const lineBreak = document.createElement('br');
-const inputElements = ['Email:', 'Subject:', 'Message:'];
+const inputElements = ['Email', 'Subject', 'Message'];
 
 for (let i = 0; i < inputElements.length; i++) {
   const element = inputElements[i];
-  const textNode = document.createTextNode(element);
+  const textNode = document.createTextNode(`${element}:`);
   const label = document.createElement('label');
   label.appendChild(textNode);
+  console.log(label);
 
   const input = document.createElement('input');
   if (i === 0) {
-    input.setAttribute('type', element.toLowerCase());
+    const email = element.toLowerCase()
+    input.setAttribute('type', email);
+    input.setAttribute('name', email);
   } else {
+    const name = element.toLowerCase();
     input.setAttribute('type', 'text');
+    input.setAttribute('name', name);
   }
+  console.log(input);
 }
 //create input element for email
 //create input element for subject
