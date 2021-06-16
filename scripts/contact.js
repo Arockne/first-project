@@ -31,6 +31,13 @@ contactForm.setAttribute('action', './submission.php');
 contactForm.setAttribute('method', 'GET');
 //create input element for name
 const fieldset = document.createElement('fieldset');
+
+const legend = document.createElement('legend');
+const legendtext = document.createTextNode('Contact');
+legend.appendChild(legendText);
+fieldset.appendChild(legend);
+console.log(fieldset);
+
 const lineBreak = document.createElement('br');
 const inputElements = ['Email', 'Subject', 'Message'];
 
@@ -58,11 +65,3 @@ for (let i = 0; i < inputElements.length; i++) {
   input.setAttribute('required', 'required')
   label.appendChild(input);
 }
-//create input element for email
-//create input element for subject
-//create input element for message
-//append name email subject and message to form
-
-
-
-  
