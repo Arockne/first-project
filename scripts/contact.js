@@ -34,12 +34,9 @@ const inputElements = ['Email', 'Subject', 'Message'];
 
 for (let i = 0; i < inputElements.length; i++) {
   const element = inputElements[i];
-  const textNode = document.createTextNode(`${element}:`);
-  const label = document.createElement('label');
-  label.appendChild(textNode);
+  const label = createElementWithText('label', `${element}:`);
   const lineBreak = document.createElement('br');
 
-  
   const input = i !== 2 ? document.createElement('input') : document.createElement('textarea');
 
   const value = element.toLowerCase();
