@@ -23,7 +23,21 @@ const pTextNode = document.createTextNode(contactDescription);
 pElement.appendChild(pTextNode);
 console.log(pElement);
 
+//Contact button
 
-const contact = document.querySelector('.contactButton');
-console.log(contact);
+//create form element
 const contactForm = document.createElement('form');
+//create input element for name
+const textArea = document.createElement('textarea');
+const lineBreak = document.createElement('br');
+const inputElements = ['Email:', 'Subject:', 'Message:'];
+
+
+//create input element for email
+//create input element for subject
+//create input element for message
+//append name email subject and message to form
+
+
+
+  
