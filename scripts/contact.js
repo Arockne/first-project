@@ -34,6 +34,15 @@ const setMaxLength = (input) => {
   return input;
 }
 
+const setInputType = (value, input) => {
+  if (value === 'email' && input.nodeName === 'INPUT') {
+    input.setAttribute('type', value);
+  } 
+  if (value !== 'email' && input.nodeName === 'INPUT') {
+    input.setAttribute('type', 'text');
+  }
+}
+
 //somehow store main content from home
 const home = document.body.querySelector('div.home');
 
@@ -63,15 +72,9 @@ for (let i = 0; i < inputElements.length; i++) {
 
   const value = element.toLowerCase();
   const input = value !== 'message' ? document.createElement('input') : document.createElement('textarea');
-
-  if (value === 'email' && input.nodeName === 'INPUT') {
-    input.setAttribute('type', value);
-  } 
-  if (value !== 'email' && input.nodeName === 'INPUT') {
-    input.setAttribute('type', 'text');
-  }
+  
+  setInputType(value, input);
   setMaxLength(input);
-  console.log(input);
   //make a function that uses these conditions depending on the type of the html element
   input.setAttribute('name', value);
   input.setAttribute('required', 'required')
