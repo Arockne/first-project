@@ -25,6 +25,15 @@ const createFormContainerWithChildren = (...children) => {
   return container;
 }
 
+const setMaxLength = (input) => {
+  if (input.nodeName === 'TEXTAREA') {
+    input.setAttribute('maxlength', '500');
+  } else {
+    input.setAttribute('maxlength', '30');
+  }
+  return input;
+}
+
 //somehow store main content from home
 const home = document.body.querySelector('div.home');
 
@@ -61,12 +70,9 @@ for (let i = 0; i < inputElements.length; i++) {
   if (value !== 'email' && input.nodeName === 'INPUT') {
     input.setAttribute('type', 'text');
   }
-  if (input.nodeName === 'TEXTAREA') {
-    input.setAttribute('maxlength', '500');
-  } else {
-    input.setAttribute('maxlength', '30');
-  }
-  
+  setMaxLength(input);
+  console.log(input);
+  //make a function that uses these conditions depending on the type of the html element
   input.setAttribute('name', value);
   input.setAttribute('required', 'required')
   label.appendChild(input);
