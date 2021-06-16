@@ -27,9 +27,7 @@ contactForm.setAttribute('method', 'GET');
 //create input element for name
 const fieldset = document.createElement('fieldset');
 
-const legend = document.createElement('legend');
-const legendText = document.createTextNode('Contact');
-legend.appendChild(legendText);
+const legend = createElementWithText('legend', 'Contact');
 fieldset.appendChild(legend);
 
 const inputElements = ['Email', 'Subject', 'Message'];
