@@ -66,6 +66,7 @@ for (let i = 0; i < inputElements.length; i++) {
   label.appendChild(input);
   fieldset.appendChild(label);
 }
+contactForm.appendChild(fieldset);
 //tell each input element to have a maximum amount of characters
 //append label elements into fieldset
 //append fieldset into form
