@@ -65,3 +65,13 @@ for (let i = 0; i < inputElements.length; i++) {
   input.setAttribute('required', 'required')
   label.appendChild(input);
 }
+
+
+//append label elements into fieldset
+//append fieldset into form
+//append rest of elements in order into a div with a class of contact
+
+//also need to add event listener when contact is pressed
+  //remove the current home in main
+  //append div with class of contact
+//once form on lunar-base is successful refactor this page to use functions
