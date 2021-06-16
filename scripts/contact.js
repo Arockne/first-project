@@ -1,6 +1,6 @@
 
 
-const createElementWithText = function(element, text) {
+const createElementWithText = (element, text) => {
   if (!element && !text) {
     return null;
   }
