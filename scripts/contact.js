@@ -47,6 +47,27 @@ const setNameAndRequiredAttribute = (input ,value) => {
   input.setAttribute('required', 'required');
 }
 
+const createFieldsetWithInput = (inputElements) => {
+  const fieldset = document.createElement('fieldset');
+  for (const element of inputElements) {
+    
+    const value = element.toLowerCase();
+    const input = value !== 'message' ? document.createElement('input') : document.createElement('textarea');
+    
+    setInputType(value, input);
+    setMaxLength(input);
+    setNameAndRequiredAttribute(input, value);
+    
+    const label = createElementWithText('label', `${element}:`);
+    label.appendChild(input);
+    fieldset.appendChild(label);
+    
+    const lineBreak = document.createElement('br');
+    fieldset.appendChild(lineBreak);
+  }
+  return fieldset;
+}
+
 //Creation of heading element
 const heading = createElementWithText('h2', 'Contact Lunar Base');
 
@@ -58,30 +79,12 @@ const description = createElementWithText('p', contactDescription);
 const contactForm = document.createElement('form');
 contactForm.setAttribute('action', './submission.php');
 contactForm.setAttribute('method', 'GET');
-//create input element for name
-const fieldset = document.createElement('fieldset');
 
+const fieldset = createFieldsetWithInput(['Email', 'Subject', 'Message']);
 const legend = createElementWithText('legend', 'Contact');
 fieldset.appendChild(legend);
 
-const inputElements = ['Email', 'Subject', 'Message'];
 
-for (const element of inputElements) {
-  
-  const value = element.toLowerCase();
-  const input = value !== 'message' ? document.createElement('input') : document.createElement('textarea');
-  
-  setInputType(value, input);
-  setMaxLength(input);
-  setNameAndRequiredAttribute(input, value);
-  
-  const label = createElementWithText('label', `${element}:`);
-  label.appendChild(input);
-  fieldset.appendChild(label);
-  
-  const lineBreak = document.createElement('br');
-  fieldset.appendChild(lineBreak);
-}
 contactForm.appendChild(fieldset);
 
 const formContainer = createFormContainerWithChildren(heading, description, contactForm);
