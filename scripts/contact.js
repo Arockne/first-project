@@ -52,6 +52,8 @@ for (let i = 0; i < inputElements.length; i++) {
   const value = element.toLowerCase();
 
   //make the conditional more versatile using el.nodeName
+  //if value is equal to email
+    //set the input type
   if (i === 0) {
     input.setAttribute('type', value);
     input.setAttribute('maxlength', '30');
@@ -70,11 +72,8 @@ for (let i = 0; i < inputElements.length; i++) {
 }
 contactForm.appendChild(fieldset);
 
-const formContainer = document.createElement('div');
+const formContainer = createFormContainerWithChildren(heading, description, contactForm);
 formContainer.setAttribute('class', 'contact');
-formContainer.appendChild(heading);
-formContainer.appendChild(description);
-formContainer.appendChild(contactForm);
 
 const contactButton = document.querySelector('.contactButton');
 const main = document.querySelector('main');
