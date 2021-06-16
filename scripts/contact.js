@@ -78,7 +78,7 @@ const createFormWithAttributes = (action, method="GET") => {
 const completedFormToFill = () => {
   const form = createFormWithAttributes('./submission.php', 'GET');
 
-  const fieldset = createFieldsetWithInput(['Email', 'Subject', 'Message']);
+  const fieldset = createFieldsetWithInput(['Name', 'Email', 'Subject', 'Message']);
   const legend = createElementWithText('legend', 'Contact');
   fieldset.appendChild(legend);
   form.appendChild(fieldset);
