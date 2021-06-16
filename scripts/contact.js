@@ -35,7 +35,6 @@ const legendText = document.createTextNode('Contact');
 legend.appendChild(legendText);
 fieldset.appendChild(legend);
 
-const lineBreak = document.createElement('br');
 const inputElements = ['Email', 'Subject', 'Message'];
 
 for (let i = 0; i < inputElements.length; i++) {
@@ -43,6 +42,7 @@ for (let i = 0; i < inputElements.length; i++) {
   const textNode = document.createTextNode(`${element}:`);
   const label = document.createElement('label');
   label.appendChild(textNode);
+  const lineBreak = document.createElement('br');
 
   
   const input = i !== 2 ? document.createElement('input') : document.createElement('textarea');
@@ -62,6 +62,7 @@ for (let i = 0; i < inputElements.length; i++) {
   
   input.setAttribute('name', value);
   input.setAttribute('required', 'required')
+  fieldset.appendChild(lineBreak);
   label.appendChild(input);
   fieldset.appendChild(label);
 }
