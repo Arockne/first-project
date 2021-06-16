@@ -31,7 +31,6 @@ const setMaxLength = (input) => {
   } else {
     input.setAttribute('maxlength', '30');
   }
-  return input;
 }
 
 const setInputType = (value, input) => {
@@ -43,8 +42,6 @@ const setInputType = (value, input) => {
   }
 }
 
-//somehow store main content from home
-const home = document.body.querySelector('div.home');
 
 //Creation of heading element
 const heading = createElementWithText('h2', 'Contact Lunar Base');
@@ -69,7 +66,7 @@ for (let i = 0; i < inputElements.length; i++) {
   const element = inputElements[i];
   const label = createElementWithText('label', `${element}:`);
   const lineBreak = document.createElement('br');
-
+  
   const value = element.toLowerCase();
   const input = value !== 'message' ? document.createElement('input') : document.createElement('textarea');
   
@@ -87,8 +84,11 @@ contactForm.appendChild(fieldset);
 const formContainer = createFormContainerWithChildren(heading, description, contactForm);
 formContainer.setAttribute('class', 'contact');
 
-const contactButton = document.querySelector('.contactButton');
+
+//probably could put nested div in main into a single variable so when we click home it removes and places it back in for better functionality
 const main = document.querySelector('main');
+const home = document.body.querySelector('div.home');
+const contactButton = document.querySelector('.contactButton');
 contactButton.addEventListener('click', function() {
   home.remove();
   main.appendChild(formContainer);
