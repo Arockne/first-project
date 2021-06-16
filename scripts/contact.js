@@ -42,6 +42,10 @@ const setInputType = (value, input) => {
   }
 }
 
+const setNameAndRequiredAttribute = (input ,value) => {
+  input.setAttribute('name', value);
+  input.setAttribute('required', 'required');
+}
 
 //Creation of heading element
 const heading = createElementWithText('h2', 'Contact Lunar Base');
@@ -62,21 +66,20 @@ fieldset.appendChild(legend);
 
 const inputElements = ['Email', 'Subject', 'Message'];
 
-for (let i = 0; i < inputElements.length; i++) {
-  const element = inputElements[i];
-  const label = createElementWithText('label', `${element}:`);
-  const lineBreak = document.createElement('br');
+for (const element of inputElements) {
   
   const value = element.toLowerCase();
   const input = value !== 'message' ? document.createElement('input') : document.createElement('textarea');
   
   setInputType(value, input);
   setMaxLength(input);
-  //make a function that uses these conditions depending on the type of the html element
-  input.setAttribute('name', value);
-  input.setAttribute('required', 'required')
+  setNameAndRequiredAttribute(input, value);
+  
+  const label = createElementWithText('label', `${element}:`);
   label.appendChild(input);
   fieldset.appendChild(label);
+  
+  const lineBreak = document.createElement('br');
   fieldset.appendChild(lineBreak);
 }
 contactForm.appendChild(fieldset);
