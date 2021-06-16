@@ -28,7 +28,7 @@ console.log(pElement);
 //create form element
 const contactForm = document.createElement('form');
 //create input element for name
-const textArea = document.createElement('textarea');
+const fieldset = document.createElement('fieldset');
 const lineBreak = document.createElement('br');
 const inputElements = ['Email', 'Subject', 'Message'];
 
@@ -39,16 +39,21 @@ for (let i = 0; i < inputElements.length; i++) {
   label.appendChild(textNode);
   console.log(label);
 
-  const input = document.createElement('input');
+  
+  const input = i !== 2 ? document.createElement('input') : document.createElement('textarea');
+
+  const value = element.toLowerCase();
+
   if (i === 0) {
-    const email = element.toLowerCase()
-    input.setAttribute('type', email);
-    input.setAttribute('name', email);
-  } else {
-    const name = element.toLowerCase();
-    input.setAttribute('type', 'text');
-    input.setAttribute('name', name);
+    input.setAttribute('type', value);
   }
+  
+  if (i === 1) {
+    input.setAttribute('type', 'text');
+  }
+  
+  input.setAttribute('name', value);
+  input.setAttribute('required', 'required')
   console.log(input);
 }
 //create input element for email
