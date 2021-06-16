@@ -32,7 +32,13 @@ const textArea = document.createElement('textarea');
 const lineBreak = document.createElement('br');
 const inputElements = ['Email:', 'Subject:', 'Message:'];
 
-
+for (let i = 0; i < inputElements.length; i++) {
+  const element = inputElements[i];
+  const textNode = document.createTextNode(element);
+  const label = document.createElement('label');
+  label.appendChild(textNode);
+  
+}
 //create input element for email
 //create input element for subject
 //create input element for message
