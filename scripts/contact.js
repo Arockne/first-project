@@ -15,7 +15,7 @@ const createElementWithText = (element, text) => {
   return htmlElement;
 }
 
-const createFormContainerWithChildren = (...children) => {
+const createContainerWithChildren = (...children) => {
   const container = document.createElement('div');
   for (let child of children) {
     if (child.nodeType === 1) {
@@ -96,7 +96,7 @@ const description = createElementWithText('p', contactDescription);
 //create form element
 const contactForm = completedFormToFill();
 
-const formContainer = createFormContainerWithChildren(heading, description, contactForm);
+const formContainer = createContainerWithChildren(heading, description, contactForm);
 formContainer.setAttribute('class', 'contact');
 
 
