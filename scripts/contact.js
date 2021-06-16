@@ -47,21 +47,20 @@ for (let i = 0; i < inputElements.length; i++) {
   const label = createElementWithText('label', `${element}:`);
   const lineBreak = document.createElement('br');
 
-  const input = i !== 2 ? document.createElement('input') : document.createElement('textarea');
-
   const value = element.toLowerCase();
+  const input = value !== 'message' ? document.createElement('input') : document.createElement('textarea');
 
-  //make the conditional more versatile using el.nodeName
-  //if value is equal to email
-    //set the input type
-  if (i === 0) {
+  if (value === 'email' && input.nodeName === 'INPUT') {
     input.setAttribute('type', value);
-    input.setAttribute('maxlength', '30');
-  } else if (i === 1) {
+  } 
+  if (value !== 'email' && input.nodeName === 'INPUT') {
     input.setAttribute('type', 'text');
-    input.setAttribute('maxlength', '30');
-  } else {
+  }
+
+  if (input.nodeName === 'TEXTAREA') {
     input.setAttribute('maxlength', '500');
+  } else {
+    input.setAttribute('maxlength', '30');
   }
   
   input.setAttribute('name', value);
