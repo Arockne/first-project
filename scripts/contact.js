@@ -86,32 +86,31 @@ const completedFormToFill = () => {
   return form;
 }
 
-//Creation of heading element
-const heading = createElementWithText('h2', 'Contact Lunar Base');
-
-//creation of paragraph element
-const contactDescription = 'Email us through our satelite based communications and we will get back to you as soon as your message has been relayed';
-const description = createElementWithText('p', contactDescription);
-
-//create form element
-const contactForm = completedFormToFill();
-
-const formContainer = createContainerWithChildren(heading, description, contactForm);
-formContainer.setAttribute('class', 'contact');
-
+const completedContactContent = () => {
+  const heading = createElementWithText('h2', 'Contact Lunar Base');
+  const contactDescription = 'Email us through our satelite based communications and we will get back to you as soon as your message has been relayed';
+  const description = createElementWithText('p', contactDescription);
+  const form = completedFormToFill();
+  const formContent = createContainerWithChildren(heading, description, form);
+  formContent.setAttribute('class', 'contact');
+  return formContent;
+}
 
 //probably could put nested div in main into a single variable so when we click home it removes and places it back in for better functionality
 const main = document.querySelector('main');
 const home = document.body.querySelector('.home');
+const contact = completedContactContent();
 const contactButton = document.querySelector('.contactButton');
 contactButton.addEventListener('click', function() {
-  console.log(home.remove());
-  main.appendChild(formContainer);
+  const content = document.querySelector('main div');
+  content.remove();
+  main.appendChild(contact);
 })
 
 const homeButton = document.querySelector('.homeButton');
 homeButton.addEventListener('click', function() {
-  formContainer.remove();
+  const content = document.querySelector('main div');
+  content.remove();
   main.appendChild(home);
 })
 //tell each input element to have a maximum amount of characters
