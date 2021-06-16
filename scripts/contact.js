@@ -96,7 +96,7 @@ const completedContactContent = () => {
   return formContent;
 }
 
-//probably could put nested div in main into a single variable so when we click home it removes and places it back in for better functionality
+//may need to put event listeners into its own js file
 const main = document.querySelector('main');
 const home = document.body.querySelector('.home');
 const contact = completedContactContent();
@@ -113,12 +113,3 @@ homeButton.addEventListener('click', function() {
   content.remove();
   main.appendChild(home);
 })
-//tell each input element to have a maximum amount of characters
-//append label elements into fieldset
-//append fieldset into form
-//append rest of elements in order into a div with a class of contact
-
-//also need to add event listener when contact is pressed
-  //remove the current home in main
-  //append div with class of contact
-//once form on lunar-base is successful refactor this page to use functions
