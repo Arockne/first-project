@@ -27,6 +27,8 @@ console.log(pElement);
 
 //create form element
 const contactForm = document.createElement('form');
+contactForm.setAttribute('action', '');
+contactForm.setAttribute('method', 'GET');
 //create input element for name
 const fieldset = document.createElement('fieldset');
 const lineBreak = document.createElement('br');
