@@ -54,7 +54,7 @@ for (let i = 0; i < inputElements.length; i++) {
   
   input.setAttribute('name', value);
   input.setAttribute('required', 'required')
-  console.log(input);
+  label.appendChild(input);
 }
 //create input element for email
 //create input element for subject
