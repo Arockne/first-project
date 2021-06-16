@@ -1,7 +1,12 @@
-
+const isValid = (input) => {
+  return document.createElement(input).toString() != "[object HTMLUnknownElement]";
+}
 
 const createElementWithText = (element, text) => {
   if (!element && !text) {
+    return null;
+  }
+  if (!isValid(element)) {
     return null;
   }
   const htmlElement = document.createElement(element);
@@ -56,7 +61,6 @@ for (let i = 0; i < inputElements.length; i++) {
   if (value !== 'email' && input.nodeName === 'INPUT') {
     input.setAttribute('type', 'text');
   }
-
   if (input.nodeName === 'TEXTAREA') {
     input.setAttribute('maxlength', '500');
   } else {
