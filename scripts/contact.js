@@ -43,7 +43,6 @@ for (let i = 0; i < inputElements.length; i++) {
   const textNode = document.createTextNode(`${element}:`);
   const label = document.createElement('label');
   label.appendChild(textNode);
-  console.log(label);
 
   
   const input = i !== 2 ? document.createElement('input') : document.createElement('textarea');
@@ -73,6 +72,19 @@ formContainer.setAttribute('class', 'contact');
 formContainer.appendChild(heading);
 formContainer.appendChild(pElement);
 formContainer.appendChild(contactForm);
+
+const contactButton = document.querySelector('.contactButton');
+const main = document.querySelector('main');
+contactButton.addEventListener('click', function() {
+  home.remove();
+  main.appendChild(formContainer);
+})
+
+const homeButton = document.querySelector('.homeButton');
+homeButton.addEventListener('click', function() {
+  formContainer.remove();
+  main.appendChild(home);
+})
 //tell each input element to have a maximum amount of characters
 //append label elements into fieldset
 //append fieldset into form
