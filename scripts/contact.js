@@ -10,6 +10,16 @@ const createElementWithText = function(element, text) {
   return htmlElement;
 }
 
+const createFormContainerWithChildren = (...children) => {
+  const container = document.createElement('div');
+  for (let child of children) {
+    if (child.nodeType === 1) {
+      container.appendChild(child);
+    }
+  }
+  return container;
+}
+
 //somehow store main content from home
 const home = document.body.querySelector('div.home');
 
