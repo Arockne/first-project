@@ -43,7 +43,7 @@ window.addEventListener('load', (e) => {
     }
   }
   
-  const setAttributesTo = (input ,value) => {
+  const setAttributesToInput = (input ,value) => {
     input.setAttribute('name', value);
     input.setAttribute('required', 'required');
     input.setAttribute('id', value);
@@ -60,7 +60,7 @@ window.addEventListener('load', (e) => {
       
       setInputType(value, input);
       setMaxLength(input);
-      setAttributesTo(input, value);
+      setAttributesToInput(input, value);
       
       const label = createElementWithText('label', `${element}:`);
       label.appendChild(input);
