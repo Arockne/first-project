@@ -42,9 +42,10 @@ const setInputType = (value, input) => {
   }
 }
 
-const setNameAndRequiredAttribute = (input ,value) => {
+const setAttributesTo = (input ,value) => {
   input.setAttribute('name', value);
   input.setAttribute('required', 'required');
+  input.setAttribute('id', value);
 }
 
 const createFieldsetWithInput = (inputElements) => {
@@ -56,7 +57,7 @@ const createFieldsetWithInput = (inputElements) => {
     
     setInputType(value, input);
     setMaxLength(input);
-    setNameAndRequiredAttribute(input, value);
+    setAttributesTo(input, value);
     
     const label = createElementWithText('label', `${element}:`);
     label.appendChild(input);
