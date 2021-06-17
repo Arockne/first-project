@@ -50,6 +50,8 @@ const setAttributesTo = (input ,value) => {
 
 const createFieldsetWithInput = (inputElements) => {
   const fieldset = document.createElement('fieldset');
+  const legend = createElementWithText('legend', 'Contact');
+  fieldset.appendChild(legend);
   for (const element of inputElements) {
     
     const value = element.toLowerCase();
@@ -77,11 +79,13 @@ const createFormWithAttributes = (action, method="GET") => {
 }
 
 const completedFormToFill = () => {
-  const form = createFormWithAttributes('./submission.php', 'GET');
-
   const fieldset = createFieldsetWithInput(['Name', 'Email', 'Subject', 'Message']);
-  const legend = createElementWithText('legend', 'Contact');
-  fieldset.appendChild(legend);
+  const submit = document.createElement('input');
+  submit.setAttribute('type', 'submit');
+  submit.setAttribute('value', 'TO THE MOON!');
+  fieldset.append(submit);
+  
+  const form = createFormWithAttributes('./submission.php', 'GET');
   form.appendChild(fieldset);
   
   return form;
