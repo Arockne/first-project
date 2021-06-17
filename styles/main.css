@@ -70,3 +70,41 @@ footer {
   text-align: center;
 }
 /*********************/
+
+
+/******* Main Contact *******/
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact p {
+  width: 50%;
+  text-align: center;
+}
+
+.contact fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+[type="submit"] {
+  font-family: 'Orbitron';
+}
+/*some how use flexbox on these items*/
+#name {
+  margin-left: 12%;
+}
+#email {
+  margin-left: 13%;
+}
+#subject {
+  margin-left: 7%;
+}
+#message {
+  margin-left: 2%;
+  height: 15px;
+}
+
+/*************************/
