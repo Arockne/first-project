@@ -89,22 +89,12 @@ footer {
   width: 100%;
 }
 
+.contact fieldset label {
+  display:flex;
+  justify-content: space-evenly;
+}
+
 [type="submit"] {
   font-family: 'Orbitron';
 }
-/*some how use flexbox on these items*/
-#name {
-  margin-left: 12%;
-}
-#email {
-  margin-left: 13%;
-}
-#subject {
-  margin-left: 7%;
-}
-#message {
-  margin-left: 2%;
-  height: 15px;
-}
-
 /*************************/
