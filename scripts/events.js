@@ -7,13 +7,13 @@ window.addEventListener('load', (e) => {
   const contact = completedContactContent();
   
   const contactButton = document.querySelector('.contactButton');
-  contactButton.addEventListener('click', function() {
+  contactButton.addEventListener('click', function appendContact() {
     mainContent().remove();
     main.appendChild(contact);
   })
   
   const homeButton = document.querySelector('.homeButton');
-  homeButton.addEventListener('click', function() {
+  homeButton.addEventListener('click', function appendHome() {
     mainContent().remove();
     main.appendChild(home);
   })
