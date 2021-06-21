@@ -85,7 +85,7 @@ const completedFormToFill = () => {
   submit.setAttribute('value', 'TO THE MOON!');
   fieldset.append(submit);
   
-  const form = createFormWithAttributes('./submission.php', 'GET');
+  const form = createFormWithAttributes('./index.html', 'GET');
   form.appendChild(fieldset);
   
   return form;
