@@ -21,6 +21,12 @@ window.addEventListener('load', (e) => {
     main.appendChild(workInProgress);
   })
 
+  const articleButton = document.querySelector('.articleButton');
+  articleButton.addEventListener('click', function appendArticle() {
+    mainContent().remove();
+    main.appendChild(workInProgress);
+  })
+
   const contactButton = document.querySelector('.contactButton');
   contactButton.addEventListener('click', function appendContact() {
     mainContent().remove();
