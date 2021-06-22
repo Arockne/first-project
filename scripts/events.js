@@ -17,5 +17,13 @@ window.addEventListener('load', (e) => {
   contactButton.addEventListener('click', function appendContact() {
     mainContent().remove();
     main.appendChild(contact);
+    
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function onSubmit() {
+      mainContent().remove();
+      main.appendChild(workInProgress);
+      workInProgress.style.textAlign = 'center';
+      workInProgress.style.fontSize = '50px';
+    })
   })
 })
