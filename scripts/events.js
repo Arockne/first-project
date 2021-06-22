@@ -5,14 +5,22 @@ window.addEventListener('load', (e) => {
   const main = document.querySelector('main');
   const home = document.body.querySelector('.home');
   const contact = completedContactContent();
-  const workInProgress = createElementWithText( 'p', 'Currently under construction');
+  const workInProgress = createElementWithText( 'div', 'Currently under construction');
+  workInProgress.style.textAlign = 'center';
+  workInProgress.style.fontSize = '50px';
   
   const homeButton = document.querySelector('.homeButton');
   homeButton.addEventListener('click', function appendHome() {
     mainContent().remove();
     main.appendChild(home);
   })
-  
+
+  const staffButton = document.querySelector('.staffButton');
+  staffButton.addEventListener('click', function appendStaff() {
+    mainContent().remove();
+    main.appendChild(workInProgress);
+  })
+
   const contactButton = document.querySelector('.contactButton');
   contactButton.addEventListener('click', function appendContact() {
     mainContent().remove();
@@ -22,8 +30,6 @@ window.addEventListener('load', (e) => {
     form.addEventListener('submit', function onSubmit() {
       mainContent().remove();
       main.appendChild(workInProgress);
-      workInProgress.style.textAlign = 'center';
-      workInProgress.style.fontSize = '50px';
     })
   })
 })
