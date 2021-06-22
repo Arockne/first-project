@@ -5,16 +5,17 @@ window.addEventListener('load', (e) => {
   const main = document.querySelector('main');
   const home = document.body.querySelector('.home');
   const contact = completedContactContent();
-  
-  const contactButton = document.querySelector('.contactButton');
-  contactButton.addEventListener('click', function appendContact() {
-    mainContent().remove();
-    main.appendChild(contact);
-  })
+  const workInProgress = createElementWithText( 'p', 'Currently under construction');
   
   const homeButton = document.querySelector('.homeButton');
   homeButton.addEventListener('click', function appendHome() {
     mainContent().remove();
     main.appendChild(home);
+  })
+  
+  const contactButton = document.querySelector('.contactButton');
+  contactButton.addEventListener('click', function appendContact() {
+    mainContent().remove();
+    main.appendChild(contact);
   })
 })
